@@ -1,0 +1,51 @@
+$breakpoint: 900px
+$color-primary: #111111
+$color-contrast: #F2F2F2
+$color-secondary: #86868B
+$font-main: "Open Sans Regular"
+$font-bold: "Open Sans Bold"
+$padding-narrow: 8px
+$padding-main: 32px
+$padding-wide: 48px
+$padding-large: 56px
+
+$nav-width-desktop: 320px
+$nav-header-height: 120px
+$nav-height-mobile: 100px
+
+$expanded-image-height-desktop: 80%
+$expanded-image-height-mobile: 65%
+
+@mixin center-vertical()
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    
+@mixin center-horizontal()
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+
+
+@font-face
+    font-family: $font-main
+    font-display: swap
+    src: url(../assets/fonts/open-sans-regular.ttf) format("truetype")
+
+
+@font-face
+    font-family: $font-bold
+    font-display: swap
+    src: url(../assets/fonts/open-sans-bold.ttf) format("truetype")
+
+@font-face
+    font-family: "Material Icons"
+    font-style: normal
+    font-weight: 400
+    src: url(../assets/fonts/material-solid.woff2) format("woff2")
+
+@font-face
+    font-family: "Material Icons Outlined"
+    font-style: normal
+    font-weight: 400
+    src: url(../assets/fonts/material-outlined.woff2) format("woff2")

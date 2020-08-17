@@ -1,0 +1,81 @@
+@import ../_common
+    
+main
+    position: absolute
+    top: 0
+
+    @media (min-width: $breakpoint)
+        width: calc(100% - #{$nav-width-desktop})
+        max-width: 1400px
+        height: 100%
+        left: $nav-width-desktop
+        padding: 42px 120px
+
+    @media (max-width: $breakpoint)
+        width: 100%
+        padding: $padding-wide $padding-main $padding-wide + $nav-height-mobile $padding-main
+
+    h1
+        margin-bottom: $padding-wide
+
+        @media (max-width: $breakpoint)
+            font-size: 22px
+
+section.action-buttons
+    display: flex
+    position: fixed
+
+    @media (max-width: $breakpoint)
+        top: $padding-narrow
+        right: $padding-narrow
+
+    @media (min-width: $breakpoint)
+        top: $padding-large
+        right: $padding-large
+
+    button
+        margin-right: $padding-narrow
+
+    button:last-child
+        margin-right: 0
+
+button.action
+    background: #FFF
+    border-radius: 50%
+    z-index: 2
+
+    @media (max-width: $breakpoint)
+        width: 40px
+        height: 40px
+
+    @media (min-width: $breakpoint)
+        width: 64px
+        height: 64px
+
+    span.material-icons
+        display: block
+        width: 100%
+        text-align: center
+
+button.action.bottom
+    position: fixed
+
+    @media (max-width: $breakpoint)
+        bottom: $padding-narrow
+
+    @media (min-width: $breakpoint)
+        bottom: $padding-large
+
+button.action.left
+    @media (max-width: $breakpoint)
+        left: $padding-narrow
+
+    @media (min-width: $breakpoint)
+        left: $padding-large
+
+button.action.right
+    @media (max-width: $breakpoint)
+        right: $padding-narrow
+
+    @media (min-width: $breakpoint)
+        right: $padding-large

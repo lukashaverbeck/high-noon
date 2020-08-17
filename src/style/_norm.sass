@@ -1,0 +1,71 @@
+@import ./_common
+    
+.material-icons
+    font-family: "Material Icons"
+
+.material-icons-outlined
+    font-family: "Material Icons Outlined"
+
+.material-icons, .material-icons-outlined
+    font-weight: normal
+    font-style: normal
+    font-size: 20px
+    line-height: 1
+    letter-spacing: normal
+    text-transform: none
+    display: inline-block
+    white-space: nowrap
+    word-wrap: normal
+    direction: ltr
+    -webkit-font-feature-settings: "liga"
+    -webkit-font-smoothing: antialiased
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: inherit
+    -webkit-tap-highlight-color: transparent
+
+*, *:focus, *:active
+    outline: none !important
+
+html::-webkit-scrollbar
+    @media screen and (max-width: $breakpoint)
+        width: 0
+        height: 0
+
+    @media screen and (min-width: $breakpoint)
+        width: 12px
+
+html::-webkit-scrollbar-track
+    visibility: hidden
+
+html::-webkit-scrollbar-thumb
+    background: $color-primary
+    border-top-left-radius: 4px
+    border-bottom-left-radius: 4px
+
+h1, h2, h3
+    font-family: $font-bold
+
+button
+    background: transparent
+    border: none
+    cursor: pointer
+
+    span.material-icons
+        vertical-align: middle
+
+p
+    font-size: 20px
+    letter-spacing: 1px
+    line-height: 1.62
+
+body
+    height: 100vh
+    background: #fff
+    font-family: $font-main
+
+    *
+        transition: all 400ms

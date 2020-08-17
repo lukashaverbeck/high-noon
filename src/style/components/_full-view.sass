@@ -1,0 +1,63 @@
+@import ../_common
+
+
+div.fullview
+    display: block
+    position: fixed
+    width: 100vw
+    height: 100vh
+    top: 0
+    background: #FFF
+    z-index: 1
+
+    div.details
+        margin-bottom: 0
+
+        div.detail
+            position: absolute
+            padding: $padding-narrow
+            z-index: 2
+
+            @media (max-width: $breakpoint)
+                top: $padding-narrow
+                left: $padding-narrow
+
+            @media (min-width: $breakpoint)
+                top: $padding-large
+                left: $padding-large
+
+    div.image
+        @media (max-width: $breakpoint)
+            height: $expanded-image-height-mobile
+            padding: $padding-wide + 40px $padding-main $padding-main $padding-main
+
+        @media (min-width: $breakpoint)
+            height: $expanded-image-height-desktop
+            padding: $padding-wide
+
+        img
+            max-height: 100%
+            max-width: 100%
+            border-radius: 12px
+            @include center-horizontal()
+
+    div.description
+        position: relative
+        width: 100%
+        overflow-y: auto
+
+        @media (max-width: $breakpoint)
+            height: 100% - $expanded-image-height-mobile
+            padding: $padding-narrow $padding-main
+
+        @media (min-width: $breakpoint)
+            height: 100% - $expanded-image-height-desktop
+            padding: $padding-narrow 160px
+
+        p
+            max-height: 100%
+            text-align: center
+            @include center-vertical()
+
+    div.full
+        height: 100%
