@@ -11,6 +11,8 @@ type MainViewState = {
 };
 
 export default class MainView extends React.Component<{}, MainViewState> {
+    private static yPos = window.scrollY;
+
     public constructor(props: {}) {
         super(props);
 
@@ -22,6 +24,25 @@ export default class MainView extends React.Component<{}, MainViewState> {
 
         this.toggleFullView = this.toggleFullView.bind(this);
         this.toggleOverView = this.toggleOverView.bind(this);
+    }
+    
+    public readonly render = () => {
+        if (this.state.view === "full") {
+            return <FullView
+                initialEntryIndex={this.state.entryIndex}
+                initialImageIndex={this.state.imageIndex}
+                toggleOverView={this.toggleOverView}
+            />;
+        } else {
+            return (
+                <div>
+                    <Navigation />
+                    <main>
+                        <OverView toggleFullView={this.toggleFullView} />
+                    </main>
+                </div>
+            );
+        }
     }
 
     private readonly onViewChange = (view: View) => {
@@ -44,23 +65,4 @@ export default class MainView extends React.Component<{}, MainViewState> {
     }
 
     private readonly toggleOverView = () => this.onViewChange("over");
-
-    public readonly render = () => {
-        if (this.state.view === "full") {
-            return <FullView
-                initialEntryIndex={this.state.entryIndex}
-                initialImageIndex={this.state.imageIndex}
-                toggleOverView={this.toggleOverView}
-            />;
-        } else {
-            return (
-                <div>
-                    <Navigation />
-                    <main>
-                        <OverView toggleFullView={this.toggleFullView} />
-                    </main>
-                </div>
-            );
-        }
-    }
 }
